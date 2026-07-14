@@ -1,0 +1,17 @@
+{
+  "name": "uploadAnyObject",
+  "version": "1.0.0",
+  "dependencies": {
+    "@sap/cds": "^9",
+    "axios": "^1.18.1",
+    "multer": "^2.2.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^2.4.0"
+  },
+  "scripts": {
+    "start": "cds-serve"
+  },
+  "private": true
+}

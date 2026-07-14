@@ -1,0 +1,58 @@
+### Service Document
+GET http://localhost:4004/odata/v4/upload/
+
+###
+
+### Metadata
+GET http://localhost:4004/odata/v4/upload/$metadata
+
+###
+
+### Read Upload Logs
+GET http://localhost:4004/odata/v4/upload/UploadLogs
+
+### Test Upload Action
+
+POST http://localhost:4004/odata/v4/upload/uploadAnyObject
+Content-Type: application/json
+
+{
+
+    "data":[
+  {
+    "Product": "MAT001",
+    "BaseUnit": "EA"
+  },
+  {
+    "Product": "MAT002",
+    "BaseUnit": "EA"
+  }
+]
+}
+
+
+### Upload Excel File through REST API for material
+
+POST http://localhost:4004/upload
+Content-Type: multipart/form-data; boundary=MyBoundary
+
+--MyBoundary
+Content-Disposition: form-data; name="file"; filename="Material.xlsx"
+Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+
+< ./uploads/Material.xlsx
+
+--MyBoundary--
+
+### Upload Excel File through REST API for BOM
+
+POST http://localhost:4004/upload
+Content-Type: multipart/form-data; boundary=MyBoundary
+
+--MyBoundary
+Content-Disposition: form-data; name="file"; filename="Material.xlsx"
+Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+
+< ./uploads/BOM.xlsx
+
+--MyBoundary--
