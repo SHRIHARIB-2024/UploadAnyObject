@@ -1,0 +1,141 @@
+<mvc:View
+    controllerName="com.upload.uploadui.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:u="sap.ui.unified"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <VBox
+                width="100%"
+                class="sapUiMediumMargin"
+            >
+                <Title
+                    text="Upload Excel File"
+                    level="H2"
+                />
+
+                <Text
+                    text="Select any supported Excel file. The system will automatically detect the object type."
+                    class="sapUiSmallMarginBottom"
+                />
+
+                <u:FileUploader
+                    id="fileUploader"
+                    width="400px"
+                    fileType="xlsx"
+                    placeholder="Choose Excel File"
+                    buttonText="Browse"
+                />
+
+                <Button
+                    text="Upload"
+                    type="Emphasized"
+                    press=".onUpload"
+                    class="sapUiMediumMarginTop"
+                />
+
+                <MessageStrip
+                    id="msgStrip"
+                    visible="false"
+                    showIcon="true"
+                    type="Success"
+                    text=""
+                    class="sapUiMediumMarginTop"
+                />
+            </VBox>
+
+            <VBox
+                width="100%"
+                class="sapUiMediumMargin"
+            >
+                <Table
+                    id="uploadTable"
+                    inset="false"
+                    headerText="Upload History"
+                    items="{/UploadLogs}"
+                >
+                    <columns>
+                        <Column>
+                            <Text text="File Name" />
+                        </Column>
+
+                        <Column>
+                            <Text text="Object Type" />
+                        </Column>
+
+                        <Column>
+                            <Text text="Status" />
+                        </Column>
+
+                        <Column>
+                            <Text text="Uploaded By" />
+                        </Column>
+
+                        <Column>
+                            <Text text="Created At" />
+                        </Column>
+
+                        <!-- <Column>
+                            <Text text="Uploaded Data" />
+                        </Column> -->
+                    </columns>
+
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <!-- <Text text="{fileName}" /> -->
+                                <Link
+                                    text="{fileName}"
+                                    press=".onViewFile"
+                                />
+
+                                <Text text="{objectType}" />
+
+                                <ObjectStatus
+                                    text="{status}"
+                                    state="Success"
+                                />
+
+                                <Text text="{uploadedBy}" />
+                                <Text text="{createdAt}" />
+                                <Text text="{uploadedJson}" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </VBox>
+
+            <VBox>
+                <Dialog
+                    id="dataDialog"
+                    title="Uploaded Data"
+                    contentWidth="900px"
+                    contentHeight="500px"
+                >
+                    <ScrollContainer
+                        width="100%"
+                        height="100%"
+                        vertical="true"
+                    >
+                        <Table
+                            id="dataTable"
+                            inset="false"
+                        />
+                    </ScrollContainer>
+
+                    <endButton>
+                        <Button
+                            text="Close"
+                            press=".onCloseDialog"
+                        />
+                    </endButton>
+                </Dialog>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

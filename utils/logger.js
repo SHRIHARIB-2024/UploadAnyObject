@@ -24,6 +24,8 @@ async function logUpload(logData) {
 
             message: logData.message,
 
+            uploadedJson: JSON.stringify(logData.uploadedData),
+
             createdAt: new Date()
 
         })

@@ -9,5 +9,6 @@ entity UploadLogs {
     uploadedBy : String;
     status : String;
     message : String;
+    uploadedJson : LargeString;
     createdAt : Timestamp;
 }

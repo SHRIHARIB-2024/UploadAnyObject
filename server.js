@@ -160,7 +160,8 @@ cds.on("bootstrap", app => {
                 fileName: req.file.originalname,
                 uploadedBy: "SHRIHARI", // Later: req.user.id
                 status: "SUCCESS",
-                message: result
+                message: result,
+                uploadedData: data
             });
 
             // Delete uploaded file
