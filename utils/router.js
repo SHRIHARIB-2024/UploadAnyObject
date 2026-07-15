@@ -1,6 +1,8 @@
 const materialHandler = require("../handlers/material");
 const bomHandler = require("../handlers/bom");
 const businessPartnerHandler = require("../handlers/businessPartner");
+const customerHandler = require("../handlers/customer");
+const salesOrderHandler = require("../handlers/salesOrder");
 
 async function routeUpload(objectType, data) {
 

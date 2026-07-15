@@ -172,6 +172,7 @@ cds.on("bootstrap", app => {
             // Response
             res.json({
                 success: true,
+                fileName: req.file.originalname,
                 objectType,
                 records: data.length,
                 result

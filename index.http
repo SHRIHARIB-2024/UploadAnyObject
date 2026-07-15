@@ -50,9 +50,48 @@ POST http://localhost:4004/upload
 Content-Type: multipart/form-data; boundary=MyBoundary
 
 --MyBoundary
-Content-Disposition: form-data; name="file"; filename="Material.xlsx"
+Content-Disposition: form-data; name="file"; filename="BOM.xlsx"
 Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
 
 < ./uploads/BOM.xlsx
+
+--MyBoundary--
+
+### Upload Excel File through REST API for Business Partner
+
+POST http://localhost:4004/upload
+Content-Type: multipart/form-data; boundary=MyBoundary
+
+--MyBoundary
+Content-Disposition: form-data; name="file"; filename="BusinessPartner.xlsx"
+Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+
+< ./uploads/BusinessPartner.xlsx
+
+--MyBoundary--
+
+### Upload Excel File through REST API for Customer
+
+POST http://localhost:4004/upload
+Content-Type: multipart/form-data; boundary=MyBoundary
+
+--MyBoundary
+Content-Disposition: form-data; name="file"; filename="Customer.xlsx"
+Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+
+< ./uploads/Customer.xlsx
+
+--MyBoundary--
+
+### Upload Excel File through REST API for SalesOrder
+
+POST http://localhost:4004/upload
+Content-Type: multipart/form-data; boundary=MyBoundary
+
+--MyBoundary
+Content-Disposition: form-data; name="file"; filename="SalesOrder.xlsx"
+Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+
+< ./uploads/SalesOrder.xlsx
 
 --MyBoundary--

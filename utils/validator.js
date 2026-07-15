@@ -140,8 +140,12 @@ function validateCustomer(req, data) {
 
     data.forEach((row, index) => {
 
-        if (!row.Customer) {
-            throw new Error(`Row ${index + 1}: Customer is mandatory.`);
+        if (!row.CustomerID) {
+            return req.reject(400, `Row ${index + 1}: CustomerID is mandatory.`);
+        }
+
+        if (!row.CustomerName) {
+            return req.reject(400, `Row ${index + 1}: CustomerName is mandatory.`);
         }
 
     });
